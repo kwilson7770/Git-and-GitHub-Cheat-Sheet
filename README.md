@@ -405,8 +405,20 @@ git stash show -p
 # restore latest stash and remove it from stack
 git stash pop
 
+# restore specific stash, but keep it on the stack
+git stash apply stash@{1}
+
+# restore specific stash and remove it from stack
+git stash pop stash@{1}
+
 # delete most recent stash
 git stash drop
+
+# delete a specific stash (might be recoverable with reflog)
+git stash drop stash@{1}
+
+# delete all stashes (not recoverable with reflog)
+git stash clear
 ```
 
 ---
